@@ -78,6 +78,9 @@
     <Content Include="js\jquery-3.4.1.js" />
     <Content Include="js\regex.js" />
     <Content Include="Web.config" />
+    <Content Include="xml\Carreras.xml" />
+    <Content Include="xml\Tipos.xml" />
+    <Content Include="xml\Usuarios.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Backend.DAOs;
 
 namespace Frontend
 {
@@ -11,7 +12,9 @@ namespace Frontend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            UsuarioDAO dao = new UsuarioDAO();
+            object c = dao.Obtener();
+            UsuarioDAO y = null;
         }
     }
 }

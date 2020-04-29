@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<carreras>
+  <carrera>
+    <nombre_carrera>Ing. Sistemas Computacionales</nombre_carrera>
+  </carrera>
+  <carrera>
+    <nombre_carrera>Ing. Informática</nombre_carrera>
+  </carrera>
+  <carrera>
+     <nombre_carrera>Ing. Electrónica</nombre_carrera>
+  </carrera>
+  <carrera>
+     <nombre_carrera>Ing. Sistemas Automotrices</nombre_carrera>
+  </carrera>
+  <carrera>
+     <nombre_carrera>Ing. Ambiental</nombre_carrera>
+  </carrera>
+  <carrera>
+     <nombre_carrera>Ing. Industrial</nombre_carrera>
+  </carrera>
+  <carrera>
+     <nombre_carrera>Ing. Gestión Empresarial</nombre_carrera>
+  </carrera>
+  <carrera>
+     <nombre_carrera>Lic. Gastronomía</nombre_carrera>
+  </carrera>
+</carreras>
