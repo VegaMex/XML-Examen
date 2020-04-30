@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <usuarios>
   <usuario>
     <id_usuario>1</id_usuario>
@@ -6,7 +6,7 @@
     <paterno_usuario>Cruz</paterno_usuario>
     <materno_usuario>Pineda</materno_usuario>
     <correo_usuario>sistemas@itsur.edu.mx</correo_usuario>
-    <contra_usuario>123</contra_usuario>
+    <contra_usuario>5353Prueba#</contra_usuario>
     <carrera_usuario>Ing. Sistemas Computacionales</carrera_usuario>
     <tipo_usuario>Coordinador</tipo_usuario>
   </usuario>

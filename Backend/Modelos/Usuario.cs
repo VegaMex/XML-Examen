@@ -14,7 +14,8 @@ namespace Backend.Modelos
         public string MaternoUsuario { get; set; }
         public string CorreoUsuario { get; set; }
         public string ContraUsuario { get; set; }
-        public string CarreraUsuario { get; set; }
-        public string TipoUsuario { get; set; }
+        public string CarreraUsuarioString { get; set; }
+        public string TipoUsuarioString { get; set; }
+        public string NombreCompletoUsuario { get; set; }
     }
 }

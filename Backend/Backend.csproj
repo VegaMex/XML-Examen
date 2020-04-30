@@ -44,6 +44,8 @@
     <Compile Include="DAOs\UsuarioDAO.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\Password.cs" />
+    <Compile Include="Seguridad\Validador.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
