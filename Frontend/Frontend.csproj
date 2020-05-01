@@ -75,6 +75,7 @@
     <Content Include="FrmRegistroUsuario.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\datatables.js" />
+    <Content Include="js\frmEditarUsuario.js" />
     <Content Include="js\frmListaUsuarios.js" />
     <Content Include="js\frmListaUsuariosRetro.js" />
     <Content Include="js\frmRegistroUsuario.js" />
@@ -82,7 +83,6 @@
     <Content Include="js\regex.js" />
     <Content Include="Web.config" />
     <Content Include="xml\Carreras.xml" />
-    <Content Include="xml\Tipos.xml" />
     <Content Include="xml\Usuarios.xml" />
   </ItemGroup>
   <ItemGroup>

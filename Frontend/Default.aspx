@@ -48,7 +48,7 @@
                             <asp:Label ID="lblNuevaContra" AssociatedControlID="txtNuevaContra" runat="server" Text="Nueva contraseña"></asp:Label>
                             <asp:TextBox ID="txtNuevaContra" CssClass="form-control" TextMode="Password" autocomplete="off" runat="server"></asp:TextBox>
                             <div class="invalid-feedback">
-                                La contraseña debe tener al menos 8 caracteres de longitud e incluir mayúsculas, minúsculas y al menos un carácter especial (!@#$%^&*)
+                                La contraseña debe tener al menos 8 caracteres de longitud e incluir mayúsculas, minúsculas, números y al menos un carácter especial (!@#$%^&*)
                             </div>
                             <asp:Label ID="lblNuevaContraConfirm" AssociatedControlID="txtNuevaContraConfirm" runat="server" Text="Confirmar nueva contraseña"></asp:Label>
                             <asp:TextBox ID="txtNuevaContraConfirm" CssClass="form-control" TextMode="Password" autocomplete="off" runat="server"></asp:TextBox>

@@ -17,18 +17,17 @@ namespace Backend.DAOs
         public Object Obtener()
         {
             xmldoc = XDocument.Load(path);
-            var bind = xmldoc.Descendants("usuario").Select(usuario => new
+            var bind = xmldoc.Descendants("usuario").Select(u => new
             {
-                IdUsuario = usuario.Element("id_usuario").Value,
-                NombreUsuario = usuario.Element("nombre_usuario").Value,
-                PaternoUsuario = usuario.Element("paterno_usuario").Value,
-                MaternoUsuario = usuario.Element("materno_usuario").Value,
-                CorreoUsuario = usuario.Element("correo_usuario").Value,
-                ContraUsuario = usuario.Element("contra_usuario").Value,
-                CarreraUsuarioString = usuario.Element("carrera_usuario").Value,
-                TipoUsuarioString = usuario.Element("tipo_usuario").Value,
-                NombreCompletoUsuario = string.Format("{0} {1} {2}", usuario.Element("nombre_usuario").Value, usuario.Element("paterno_usuario").Value, usuario.Element("materno_usuario").Value)
-            }).OrderBy(usuario => usuario.IdUsuario);
+                IdUsuario = u.Element("id_usuario").Value,
+                NombreUsuario = u.Element("nombre_usuario").Value,
+                PaternoUsuario = u.Element("paterno_usuario").Value,
+                MaternoUsuario = u.Element("materno_usuario").Value,
+                CorreoUsuario = u.Element("correo_usuario").Value,
+                CarreraUsuarioString = u.Element("carrera_usuario").Value,
+                TipoUsuarioString = u.Element("tipo_usuario").Value,
+                NombreCompletoUsuario = string.Format("{0} {1} {2}", u.Element("nombre_usuario").Value, u.Element("paterno_usuario").Value, u.Element("materno_usuario").Value)
+            }).OrderBy(u => u.IdUsuario);
             return bind;
         }
 
@@ -44,7 +43,7 @@ namespace Backend.DAOs
                                new XElement("paterno_usuario", usuario.PaternoUsuario),
                                new XElement("materno_usuario", usuario.MaternoUsuario),
                                new XElement("correo_usuario", usuario.CorreoUsuario),
-                               new XElement("contra_usuario", usuario.ContraUsuario),
+                               new XElement("contra_usuario", Password.ObtenerHash(usuario.ContraUsuario)),
                                new XElement("carrera_usuario", usuario.CarreraUsuarioString),
                                new XElement("tipo_usuario", usuario.TipoUsuarioString));
                 xmldoc.Root.Add(element);
@@ -62,7 +61,7 @@ namespace Backend.DAOs
             try
             {
                 xmldoc = XDocument.Load(path);
-                XElement element = xmldoc.Descendants("usuario").FirstOrDefault(p => p.Element("id_usuario").Value == id_usuario);
+                XElement element = xmldoc.Descendants("usuario").FirstOrDefault(u => u.Element("id_usuario").Value == id_usuario);
                 if (element != null)
                 {
                     element.Remove();
@@ -80,7 +79,7 @@ namespace Backend.DAOs
         public bool Actualizar(Usuario usuario)
         {
             xmldoc = XDocument.Load(path);
-            XElement element = xmldoc.Descendants("usuario").FirstOrDefault(p => p.Element("id_usuario").Value == usuario.IdUsuario);
+            XElement element = xmldoc.Descendants("usuario").FirstOrDefault(u => u.Element("id_usuario").Value == usuario.IdUsuario);
             if (element != null)
             {
                 try
@@ -103,10 +102,37 @@ namespace Backend.DAOs
             return false;
         }
 
+        public Usuario ObtenerUno(string id_usuario)
+        {
+            xmldoc = XDocument.Load(path);
+            XElement element = xmldoc.Descendants("usuario").FirstOrDefault(u => u.Element("id_usuario").Value == id_usuario);
+            if (element != null)
+            {
+                try
+                {
+                    return new Usuario
+                    {
+                        IdUsuario = element.Element("id_usuario").Value,
+                        NombreUsuario = element.Element("nombre_usuario").Value,
+                        PaternoUsuario = element.Element("paterno_usuario").Value,
+                        MaternoUsuario = element.Element("materno_usuario").Value,
+                        CorreoUsuario = element.Element("correo_usuario").Value,
+                        CarreraUsuarioString = element.Element("carrera_usuario").Value,
+                        TipoUsuarioString = element.Element("tipo_usuario").Value
+                    };
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
+
         public bool NuevaContra(string id_usuario, string nueva_contra)
         {
             xmldoc = XDocument.Load(path);
-            XElement element = xmldoc.Descendants("usuario").FirstOrDefault(p => p.Element("id_usuario").Value == id_usuario);
+            XElement element = xmldoc.Descendants("usuario").FirstOrDefault(u => u.Element("id_usuario").Value == id_usuario);
             if (element != null)
             {
                 try
