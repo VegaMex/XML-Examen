@@ -77,6 +77,7 @@
     <Content Include="js\datatables.js" />
     <Content Include="js\frmListaUsuarios.js" />
     <Content Include="js\frmListaUsuariosRetro.js" />
+    <Content Include="js\frmRegistroUsuario.js" />
     <Content Include="js\jquery-3.4.1.js" />
     <Content Include="js\regex.js" />
     <Content Include="Web.config" />
